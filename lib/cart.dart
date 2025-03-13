@@ -39,6 +39,9 @@ class _CartListWidgetState extends State<CartListWidget> {
         return cart.itemList.isEmpty
             ? Text('Cart is Empty')
             :ListView.separated(
+          padding: EdgeInsets.all(8.0),
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
             itemBuilder: (BuildContext context, int index){
               return CartItem(item: cart.itemList[index]);
             },
