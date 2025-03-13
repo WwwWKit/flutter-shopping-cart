@@ -16,7 +16,7 @@ class CartPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          
+          CartListWidget(),
         ],
       ),
     );
@@ -40,7 +40,7 @@ class _CartListWidgetState extends State<CartListWidget> {
             ? Text('Cart is Empty')
             :ListView.separated(
             itemBuilder: (BuildContext context, int index){
-              return const
+              return CartItem(item: cart.itemList[index]);
             },
             separatorBuilder: (BuildContext context, int index){
               return const Divider();
@@ -50,7 +50,6 @@ class _CartListWidgetState extends State<CartListWidget> {
     );
   }
 }
-
 
 class CartItem extends StatelessWidget {
   final Item item ;
